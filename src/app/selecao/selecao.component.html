@@ -1,0 +1,31 @@
+<div class="container">
+
+<div class="titulo">
+  <strong>{{ titulo }} </strong>
+<div *ngIf="escolhaAte > 1">
+  Escolha até {{ escolhaAte }} ({{ opcoesEscolhidas.length }} selecionado)
+</div>
+</div>
+<div class="corpo">
+  <div class="opcao" *ngFor="let opcao of opcoes">
+    <input
+      [type]="escolhaAte > 1 ? 'checkbox' : 'radio'"
+      [checked]="opcoesEscolhidas.indexOf(opcao) !== -1"
+      [disabled]="estaDesabilitada(opcao)"
+      (change)="marcaOuDermarcaOpcao(opcao)"
+    />
+    <!-- a propriedade checked tem que ser definida com base no estado, senão nao fica sicronizada com a 
+        logica q eu fizer . então fazemos um propriety binding na propriedade checked dentro do input
+        (o checked é uma propriedade que existe dentro do chekbox ou radio, que vai definir se ela esta marcada ou nao)
+        e para verificar se ele esta checked ou nao, temos que ver se ele esta dentro do array ou nao, e 
+        ai verificamos com indexOf-->
+
+    <!-- change para escutar algum evento do elemento input(pegar selecionados) 
+      quando o checkbox mudar, dispara alguma coisa, funcção etc-->
+
+    {{ opcao }}
+    <!-- <input *ngIf="escolhaAte > 1" type="checkbox"> 
+    <input *ngIf="escolhaAte === 1" type="radio"> {{opcao}} -->
+  </div>
+</div>
+</div>

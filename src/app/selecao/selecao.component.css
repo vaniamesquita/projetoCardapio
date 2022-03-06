@@ -1,0 +1,22 @@
+.titulo {
+  background-color: #eee;
+  padding: 8px 16px;
+}
+
+.opcao {
+  padding: 8px 16px;
+}
+
+strong {
+  font-size: larger;
+}
+
+.corpo {
+  padding: 8px 0;
+}
+
+.container {
+  width: 300px;
+  border: 1px solid grey;
+ 
+}
